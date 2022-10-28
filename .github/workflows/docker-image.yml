@@ -10,6 +10,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: git rev-parse HEAD:project
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
@@ -20,7 +21,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: agilo/medusa-admin
-          tags: type=raw,value=$(git rev-parse HEAD:project)
+          tags: type=raw,value=${git rev-parse HEAD:project}
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
