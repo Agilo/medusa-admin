@@ -8,6 +8,6 @@ RUN yarn
 COPY ./project/ .
 RUN yarn build
 
-EXPOSE 9000
+EXPOSE 7000
 
-CMD yarn serve
+CMD yarn start
