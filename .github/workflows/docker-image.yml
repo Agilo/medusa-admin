@@ -24,7 +24,9 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: agilo/medusa-admin
-          tags: type=raw,value=${{ env.project_tag }}
+          tags: |
+            type=raw,value=latest
+            type=raw,value=${{ env.project_tag }}
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
