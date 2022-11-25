@@ -9,4 +9,4 @@ COPY ./project/ .
 
 EXPOSE 7000
 
-CMD ["yarn", "start"]
+CMD ["yarn", "vite", "--port", "7000", "--host", "0.0.0.0"]
